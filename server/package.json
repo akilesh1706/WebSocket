@@ -1,0 +1,22 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "snowpack dev",
+    "build": "snowpack build"
+},
+
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "nodemon": "^3.0.2",
+    "redis": "^3.1.2",
+    "socket.io": "^4.7.2"
+  },
+  "devDependencies": {
+    "@types/redis": "^4.0.11"
+  }
+}
