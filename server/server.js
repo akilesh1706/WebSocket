@@ -6,7 +6,7 @@
 
 
 //require('socket.io') is a function, so connecting with 3000 server PORT
-const io = require('socket.io')(3000, {//cors - helps us to connect between client side and server side
+const io = require('socket.io')(process.env.PORT || 3000, {//cors - helps us to connect between client side and server side
     cors: {//as the port numbers are different
         origin: ['http://localhost:8080']//8080 is client PORT
     }
@@ -15,8 +15,7 @@ const io = require('socket.io')(3000, {//cors - helps us to connect between clie
 //const client = redis.createClient();//redis
 //connecting nodejs to redis
 const { createClient } = require('redis');
-const client = createClient();
-
+const client = createClient({host: 'redis', port: 6379});
 client.on('error', err => console.log('Redis client error', err));
 client.on('connect', () => {
     console.log('Connected to redis');
