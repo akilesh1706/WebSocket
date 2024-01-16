@@ -7,7 +7,7 @@ const roomInput = document.getElementById("room-input");
 const form = document.getElementById("form");
 const nameInput = document.getElementById("name-input");
 
-const socket = io('http://localhost:3000');//connecting to server
+const socket = io('http://localhost:80');//connecting to server
 
 //this display to which id the socket is connected(in chat)
 socket.on('connect', () => {
