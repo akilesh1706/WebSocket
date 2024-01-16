@@ -6,9 +6,9 @@
 
 
 //require('socket.io') is a function, so connecting with 3000 server PORT
-const io = require('socket.io')(process.env.PORT || 3000, {//cors - helps us to connect between client side and server side
+const io = require('socket.io')(3000, {//cors - helps us to connect between client side and server side
     cors: {//as the port numbers are different
-        origin: ['http://localhost:8080']//8080 is client PORT
+        origin: ['http://localhost:80']//8080 is client PORT
     }
 });
 //const redis = require('redis');//redis
@@ -61,7 +61,7 @@ io.on('connection', socket => {
 })
 
 // Updated line for Docker compatibility
-const PORT = process.env.PORT || 3000;
-io.listen(PORT, { '0.0.0.0': PORT }, () => {
-    console.log(`Server is running on port ${PORT}`);
-});
+// const PORT = process.env.PORT || 3000;
+// io.listen(PORT, { '0.0.0.0': PORT }, () => {
+//     console.log(`Server is running on port ${PORT}`);
+// });
