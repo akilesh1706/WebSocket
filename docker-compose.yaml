@@ -27,20 +27,14 @@ services:
       - loadbalance_net
   backend-1:
     build: ./server
-    environment:
-      - PORT=3000
     networks:
       - loadbalance_net
   backend-2:
     build: ./server
-    environment:
-      - PORT=3000
     networks:
       - loadbalance_net
   backend-3:
     build: ./server
-    environment:
-      - PORT=3000
     networks:
       - loadbalance_net
   client:
